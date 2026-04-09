@@ -23,14 +23,15 @@ const card = document.getElementById('card-to-export');
 
 // Live Preview Update Logic
 function updatePreview() {
-    views.course.innerText = inputs.course.value.toUpperCase();
+    views.course.innerText = (inputs.course.value || 'КУРС').toUpperCase();
     
     // Auto-replace newlines with <br> in theme
-    views.theme.innerHTML = inputs.theme.value.replace(/\n/g, '<br>');
+    const themeValue = inputs.theme.value || 'Название урока';
+    views.theme.innerHTML = themeValue.replace(/\n/g, '<br>');
     
-    views.did.innerText = inputs.did.value;
-    views.learn.innerText = inputs.learn.value;
-    views.future.innerText = inputs.future.value;
+    views.did.innerText = inputs.did.value || 'Здесь будет описание того, что делали...';
+    views.learn.innerText = inputs.learn.value || 'Здесь будут освоенные навыки...';
+    views.future.innerText = inputs.future.value || 'Здесь будет польза в будущем...';
 }
 
 // Attach listeners to all inputs
