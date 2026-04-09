@@ -243,6 +243,7 @@ textarea {
     color: rgba(255,255,255,0.9);
     hyphens: auto;
     word-break: break-word;
+    white-space: pre-line;
 }
 
 .card-footer {
