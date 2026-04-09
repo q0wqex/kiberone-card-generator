@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KIBERone Card Generator</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <!-- Style -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html-to-image/1.11.11/html-to-image.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Editor -->
+        <aside class="editor-sidebar">
+            <div class="editor-header">
+                <div class="logo-text">KIBERone</div>
+                <p style="font-size: 0.7rem; color: #666; margin-top: 0.2rem;">CARD GENERATOR v1.0</p>
+            </div>
+
+            <div class="input-group">
+                <label>Курс / Модуль</label>
+                <input type="text" id="input-course" placeholder="Напр: C# Программирование" value="C# Программирование">
+            </div>
+
+            <div class="input-group">
+                <label>Номер урока / Тема</label>
+                <input type="text" id="input-theme" placeholder="Напр: Урок 4: Классы и объекты" value="Урок 4: Классы и объекты">
+            </div>
+
+            <div class="input-group">
+                <label>Что делали</label>
+                <textarea id="input-did" placeholder="Опишите процесс...">Погрузились в мир ООП. Учились создавать собственные классы — «чертежи», по которым строятся программы. Научились оживлять код, создавая объекты, и разобрали, как настраивать их свойства и методы.</textarea>
+            </div>
+
+            <div class="input-group">
+                <label>Чему учит</label>
+                <textarea id="input-learn" placeholder="Опишите навыки...">Ребенок освоил архитектурный подход к коду. Это развивается абстрактное мышление и логику — умение выделять главное в объектах и описывать их поведение.</textarea>
+            </div>
+
+            <div class="input-group">
+                <label>Чем полезно в будущем</label>
+                <textarea id="input-future" placeholder="Опишите перспективу...">Классы и объекты — это база, на которой стоит вся современная разработка (Unity, мобильные приложения). Это прямой путь к созданию сложных игр и профессионального софта.</textarea>
+            </div>
+
+            <button class="btn-export" id="btn-export">
+                <i data-lucide="download"></i>
+                СКАЧАТЬ В JPG
+            </button>
+            <p style="font-size: 0.65rem; color: #555; text-align: center; margin-top: 1rem;">
+                Совет: Сначала пришлите текст из PDF мне в чат, <br>я пришлю вам готовые блоки для вставки сюда.
+            </p>
+        </aside>
+
+        <!-- Preview Area -->
+        <main class="preview-area">
+            <div id="card-to-export">
+                <div class="card-bg-decoration">
+                    <div class="grid-overlay"></div>
+                    <div class="circle-grad blue-grad"></div>
+                    <div class="circle-grad pink-grad"></div>
+                </div>
+
+                <div class="card-content">
+                    <div class="card-header">
+                        <div class="lesson-badge" id="view-course">C# ПРОГРАММИРОВАНИЕ</div>
+                        <div style="color: grey;"><i data-lucide="cpu" size="24"></i></div>
+                    </div>
+
+                    <h1 class="card-title" id="view-theme">Урок 4:<br>Классы и объекты</h1>
+
+                    <div class="section">
+                        <span class="section-label">ЧТО ДЕЛАЛИ</span>
+                        <div class="section-content" id="view-did">
+                            Погрузились в мир ООП. Учились создавать собственные классы — «чертежи», по которым строятся программы. Научились оживлять код, создавая объекты, и разобрали, как настраивать их свойства и методы.
+                        </div>
+                    </div>
+
+                    <div class="section magenta">
+                        <span class="section-label">ЧЕМУ УЧИТ</span>
+                        <div class="section-content" id="view-learn">
+                            Ребенок освоил архитектурный подход к коду. Это развивается абстрактное мышление и логику — умение выделять главное в объектах и описывать их поведение.
+                        </div>
+                    </div>
+
+                    <div class="section purple">
+                        <span class="section-label">ПОЛЬЗА В БУДУЩЕМ</span>
+                        <div class="section-content" id="view-future">
+                            Классы и объекты — это база, на которой стоит вся современная разработка (Unity, мобильные приложения). Это прямой путь к созданию сложных игр и профессионального софта.
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <div class="footer-logo">KIBER<span>one</span></div>
+                        <div class="footer-info">
+                            Первая международная кибершкола<br>
+                            будущего для детей
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Script -->
+    <script src="app.js"></script>
+</body>
+</html>
